@@ -1,14 +1,14 @@
 (function(window, angular, undefined){
 	'use strict';
 
-	angular.module('todoApp').component('todoItemController', {
+	angular.module('todoApp').component('todoItem', {
 		bindings: {
 			item: '<'
 		},
 		require: {
-			todoList: "^"
+			todoList: "^todoList"
 		},
-        templateUrl: "/app/todo-item-component.html",
+        templateUrl: "/app/todo-item/todo-item.component.html",
 		controller: "todoItemController",
 		controllerAs: "todoItem"
     });

@@ -2,24 +2,7 @@
 	'use strict';
 
 	angular.module('todoApp').controller('todoItemController',[function() {
-        var todoList = this;
-		todoList.add = add;
-		todoList.save = save;
-		todoList.edit = edit;
-		todoList.remove = remove;
-
-		function add(){
-			//TODO
-		};
-		function save(){
-			//TODO
-		}
-		function edit(){
-			//TODO
-		}
-		function remove(){
-			//TODO
-		}
+        var todoItem = this;
     }]);
 
 })(window, window.angular);
