@@ -2,7 +2,11 @@
 	'use strict';
 
 	angular.module('todoApp').component('todoList', {
-        
+        bindings: {
+			items: '<'
+		},
+		controller: 'todoListController',
+		controllerAs: 'todoList'
     });
 
 })(window, window.angular);
