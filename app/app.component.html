@@ -1,3 +1,6 @@
 <header></header>
+<form name="newTodoForm" ng-submit="newTodoForm.$valid && main.addTodo()">
+    <input class="form-control" ng-model="main.latestTodo" name="latestTodo" required=""/>
+</form>
 <todo-list items="main.todos"></todo-list>
 <footer></footer>

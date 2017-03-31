@@ -2,12 +2,22 @@
 	'use strict';
 
 	angular.module('todoApp').controller('todoAppController', [function(){
-		var main = this;
+		var main = this, count = 0;
 		main.todos = [
-			{id: 1, description: 'Wake Up', completed: false},
-			{id: 2, description: 'Gym', completed: false},
-			{id: 3, description: 'Office', completed: false}
+			{id: ++count, description: 'Wake Up', completed: false},
+			{id: ++count, description: 'Gym', completed: false},
+			{id: ++count, description: 'Office', completed: false}
 		];
+		main.addTodo = addTodo;
+
+		function addTodo(){
+			main.todos.push({
+				id: ++count,
+				description: main.latestTodo,
+				completed: false
+			});
+			main.latestTodo = '';
+		};
 	}]);
 
 })(window, window.angular);
