@@ -9,6 +9,7 @@
 		main.addTodo = addTodo;
 		main.filterTodoList = filterTodoList;
 		main.clearCompleted = clearCompleted;
+		main.$onInit = $onInit;
 
 		function getTodoList(){
 			main.todos = todoService.getTodoList();
@@ -34,15 +35,13 @@
 			alert('Completed todos has been removed.');
 		}
 
-		function activate(){
+		//init
+		function $onInit(){
 			getTodoList();
 			main.tabs = todoService.getTabs();
 			main.selectedTab = main.tabs[0];
 			filterTodoList();
 		}
-
-		//init
-		activate();
 	}
 
 })(window, window.angular);

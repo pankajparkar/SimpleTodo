@@ -1,12 +1,14 @@
 <div class="container">
     <header>
-        <h1>Application<h1>
+        <h1>Todo Application<h1>
     </header>
     <section>
         <div class="row">
-            <form name="newTodoForm" novalidate ng-submit="newTodoForm.$valid && main.addTodo()" class="col-sm-6">
-                <input class="form-control" ng-model="main.latestTodo" name="latestTodo" tooltip-placement="bottom"
-                required="" uib-tooltip='Press enter key to add new todo..' placeholder="Enter todo.." tooltip-trigger="mouseenter"/>
+            <form name="newTodoForm" autofocus novalidate ng-submit="newTodoForm.$valid && main.addTodo()" class="col-sm-6">
+                <input class="form-control" ng-model="main.latestTodo" name="latestTodo"
+                   tooltip-placement="bottom" required="" 
+                   uib-tooltip='Press enter key to add new todo..' 
+                   placeholder="Enter todo.." tooltip-trigger="mouseenter"/>
             </form>
         </div>
         <hr/>
@@ -14,8 +16,8 @@
             <div class="col-sm-6" align="center">
                 <div class="btn-group">
                     <label class="btn btn-primary" ng-repeat="tab in main.tabs" 
-                    ng-model="main.selectedTab" uib-btn-radio="tab"
-                    ng-change="main.filterTodoList()">
+                       ng-model="main.selectedTab" uib-btn-radio="tab"
+                       ng-change="main.filterTodoList()">
                         {{tab.description}}
                     </label>
                 </div>
