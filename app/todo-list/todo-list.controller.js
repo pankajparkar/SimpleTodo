@@ -1,7 +1,10 @@
 (function(window, angular, undefined){
 	'use strict';
 
-	angular.module('todoApp').controller('todoListController',[function() {
+	angular.module('todoApp').controller('todoListController', todoListController);
+
+	todoListController.$inject = [];
+	function todoListController() {
         var todoList = this;
 		todoList.add = add;
 		todoList.save = save;
@@ -20,6 +23,6 @@
 		function remove(){
 			//TODO
 		}
-    }]);
+    }
 
 })(window, window.angular);

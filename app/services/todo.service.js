@@ -1,7 +1,10 @@
 (function(window, angular, undefined){
 	'use strict';
 
-	angular.module('todoApp').service('todoService',[function(){
+	angular.module('todoApp').service('todoService', todoService);
+
+    todoService.$inject = [];
+    function todoService() {
         var self = this, count = 0,
             todos = [
                 {id: ++count, description: 'Wake Up', completed: false},
@@ -39,6 +42,6 @@
                 return !todo.completed;
             });
         }
-	}]);
+	}
 
 })(window, window.angular);
