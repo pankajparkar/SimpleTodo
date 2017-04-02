@@ -1,5 +1,9 @@
 <div class="form-group">
-    <input class="form-control" type="checkbox" ng-model="todoItem.item.completed">
+    <button class="btn btn-sm" 
+      ng-class="{'btn-success': todoItem.item.completed}"
+      ng-click="todoItem.item.completed = !todoItem.item.completed"
+      uib-tooltip-html="'{{todoItem.item.completed ? 'Mark': 'Unmark'}} completed'">
+        <i class="glyphicon glyphicon-ok"></i>
+    </button>
     <input ng-model="todoItem.item.description"/> 
-    <button class="btn btn-success btn-sm">Mark Completed</button>
 </div>

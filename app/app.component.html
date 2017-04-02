@@ -1,6 +1,29 @@
-<header></header>
-<form name="newTodoForm" ng-submit="newTodoForm.$valid && main.addTodo()">
-    <input class="form-control" ng-model="main.latestTodo" name="latestTodo" required=""/>
-</form>
-<todo-list items="main.todos"></todo-list>
+<div class="container">
+<header>
+    <h1>Application<h1>
+</header>
+<section>
+    <div class="row">
+        <form name="newTodoForm" ng-submit="newTodoForm.$valid && main.addTodo()" class="col-sm-6">
+            <input class="form-control" ng-model="main.latestTodo" name="latestTodo" required="" placeholder="Enter todo.."/>
+        </form>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-6" align="center">
+            <div class="btn-group">
+                <label class="btn btn-primary" ng-repeat="tab in main.tabs" 
+                 ng-model="main.selectedTab" uib-btn-radio="tab.name">
+                    {{tab.description}}
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <hr/>
+    <todo-list items="main.todos"></todo-list>
+    <hr/>
+    <button class="btn btn-primary" ng-click="main.clearCompleted()">Clear Completed</button>
+</section>
 <footer></footer>
+</div>

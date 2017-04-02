@@ -1,23 +1,35 @@
 (function(window, angular, undefined){
 	'use strict';
 
-	angular.module('todoApp').controller('todoAppController', [function(){
-		var main = this, count = 0;
-		main.todos = [
-			{id: ++count, description: 'Wake Up', completed: false},
-			{id: ++count, description: 'Gym', completed: false},
-			{id: ++count, description: 'Office', completed: false}
-		];
+	angular.module('todoApp').controller('todoAppController', todoAppController);
+
+	todoAppController.$inject = ['todoService'];
+	function todoAppController(todoService){
+		var main = this;
 		main.addTodo = addTodo;
+		main.clearCompleted = clearCompleted;
+
+		function getTodoList(){
+			main.todos = todoService.getTodoList();
+		}
 
 		function addTodo(){
-			main.todos.push({
-				id: ++count,
-				description: main.latestTodo,
-				completed: false
-			});
+			todoService.addTodo(main.latestTodo);
 			main.latestTodo = '';
-		};
-	}]);
+			getTodoList();
+		}
+
+		function clearCompleted(){
+			getTodoList();
+		}
+
+		function activate(){
+			getTodoList();
+			main.tabs = todoService.getTabs();
+		}
+
+		//init
+		activate();
+	}
 
 })(window, window.angular);
