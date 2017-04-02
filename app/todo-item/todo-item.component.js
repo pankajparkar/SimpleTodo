@@ -1,6 +1,7 @@
 (function(window, angular, undefined){
 	'use strict';
-
+	
+	//Dumb component
 	angular.module('todoApp').component('todoItem', {
 		bindings: {
 			item: '<'
@@ -9,7 +10,7 @@
 			todoList: "^todoList"
 		},
         templateUrl: "/app/todo-item/todo-item.component.html",
-		controller: "todoItemController",
+		controller: angular.noop, //TODO look for alternative
 		controllerAs: "todoItem"
     });
 

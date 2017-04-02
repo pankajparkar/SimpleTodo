@@ -3,25 +3,41 @@
 
 	angular.module('todoApp').controller('todoListController', todoListController);
 
-	todoListController.$inject = [];
-	function todoListController() {
-        var todoList = this;
-		todoList.add = add;
-		todoList.save = save;
-		todoList.edit = edit;
-		todoList.remove = remove;
+	todoListController.$inject = ['todoService'];
 
-		function add(){
-			//TODO
-		};
-		function save(){
-			//TODO
+	function todoListController(todoService) {
+        var todoList = this;
+		todoList.$onInit = $onInit;
+		todoList.filterTodoList = filterTodoList;
+		todoList.clearCompleted = clearCompleted;
+		todoList.toggleCompleted = toggleCompleted;
+
+        function toggleCompleted(item) {
+            item.completed = !item.completed
+        }
+		
+		function $onInit(){
+			todoList.tabs = todoService.getTabs();
+			todoList.selectedTab = todoList.tabs[0];
+			filterTodoList();
 		}
-		function edit(){
-			//TODO
+		
+		function getTodoList(){
+			todoList.todos = todoService.getTodoList();
 		}
-		function remove(){
-			//TODO
+		
+		function filterTodoList(){
+			getTodoList();
+			if(todoList.selectedTab.name === 'all') return;
+			todoList.todos = todoList.todos.filter(function(item){
+				return item.completed === (todoList.selectedTab.name === "completed");
+			});
+		}
+
+		function clearCompleted(){
+			todoService.removeTodos();
+			filterTodoList();
+			alert('Completed todos has been removed.');
 		}
     }
 

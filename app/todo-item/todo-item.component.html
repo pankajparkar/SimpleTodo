@@ -1,7 +1,7 @@
 <div class="form-group">
     <button class="btn btn-xs" 
        ng-class="{'btn-success': todoItem.item.completed}"
-       ng-click="todoItem.toggleCompleted()"
+       ng-click="todoItem.todoList.toggleCompleted(todoItem.item)"
        uib-tooltip="{{todoItem.item.completed ? 'Unmark': 'Mark'}} as completed">
         <i class="glyphicon glyphicon-ok"></i>
     </button>

@@ -1,5 +1,24 @@
+<div class="row">
+    <div class="col-sm-6" align="center">
+        <div class="btn-group">
+            <label class="btn btn-primary" ng-repeat="tab in todoList.tabs" 
+                ng-model="todoList.selectedTab" uib-btn-radio="tab"
+                ng-change="todoList.filterTodoList()">
+                    {{tab.description}}
+            </label>
+        </div>
+    </div>
+</div>
+
+<hr/>
+
 <ul class="todo-list">
-    <li ng-repeat="item in todoList.items">
+    <li ng-repeat="item in todoList.todos">
         <todo-item item="item"></todo-item>
     </li>
 </ul>
+<div ng-if="!todoList.todos.length" class="alert alert-info">
+    No todo found with status '{{todoList.selectedTab.description}}'.
+</div>
+<hr/>
+<button class="btn btn-primary" ng-click="todoList.clearCompleted()">Clear Completed</button>
