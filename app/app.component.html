@@ -24,6 +24,9 @@
     
     <hr/>
     <todo-list items="main.todos"></todo-list>
+    <div ng-if="!main.todos.length" class="alert alert-info">
+        No todo found with status '{{main.selectedTab.description}}'.
+    </div>
     <hr/>
     <button class="btn btn-primary" ng-click="main.clearCompleted()">Clear Completed</button>
 </section>
