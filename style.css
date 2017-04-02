@@ -2,3 +2,8 @@
     list-style-type: none;
     padding: 0;
 }
+
+.form-control.todo-item-input {
+    width: 300px; 
+    display: inline;
+}

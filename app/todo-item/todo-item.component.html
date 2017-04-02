@@ -1,9 +1,9 @@
 <div class="form-group">
     <button class="btn btn-xs" 
       ng-class="{'btn-success': todoItem.item.completed}"
-      ng-click="todoItem.item.completed = !todoItem.item.completed"
-      uib-tooltip-html="'{{todoItem.item.completed ? 'Unmark': 'Mark'}} completed'">
+      ng-click="todoItem.toggleCompleted()"
+      uib-tooltip="{{todoItem.item.completed ? 'Unmark': 'Mark'}} completed">
         <i class="glyphicon glyphicon-ok"></i>
     </button>
-    <input class="form-control" ng-model="todoItem.item.description" style="width: 300px; display: inline;"/> 
+    <input class="form-control todo-item-input" ng-model="todoItem.item.description"/> 
 </div>
