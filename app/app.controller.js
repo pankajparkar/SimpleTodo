@@ -30,7 +30,8 @@
 
 		function clearCompleted(){
 			todoService.removeTodos();
-			getTodoList();
+			filterTodoList();
+			alert('Completed todos has been removed.');
 		}
 
 		function activate(){
