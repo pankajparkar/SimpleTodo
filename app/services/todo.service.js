@@ -15,7 +15,7 @@
             ];
         self.getTodoList = getTodoList;
         self.addTodo = addTodo;
-        self.removeTodo = removeTodo;
+        self.removeTodos = removeTodos;
         self.getTabs = getTabs;
         
         function getTodoList(){
@@ -34,8 +34,10 @@
 			});
         }
 
-        function removeTodo(index){
-            todos.splice(index);
+        function removeTodos(){
+            todos = todos.filter(function (todo) {
+                return !todo.completed;
+            });
         }
 	}]);
 

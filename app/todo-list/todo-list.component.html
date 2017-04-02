@@ -2,4 +2,7 @@
     <li ng-repeat="item in todoList.items">
         <todo-item item="item"></todo-item>
     </li>
+    <li ng-if="!todoList.items.length">
+        No {{$parent.$parent.main.selectedTab.description}} found.
+    </li>
 </ul>
