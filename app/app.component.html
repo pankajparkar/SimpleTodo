@@ -5,10 +5,11 @@
     <section>
         <div class="row">
             <form name="newTodoForm" autofocus novalidate ng-submit="newTodoForm.$valid && main.addTodo()" class="col-sm-6">
-                <input class="form-control" ng-model="main.latestTodo" name="latestTodo"
-                   tooltip-placement="bottom" required="" 
+                <input class="form-control new-todo" ng-model="main.latestTodo" name="latestTodo"
+                   tooltip-placement="bottom" required=""
                    uib-tooltip='Press enter key to add new todo..' 
                    placeholder="Enter todo.." tooltip-trigger="mouseenter"/>
+                <button class="btn btn-success add-todo-btn">Add Todo</button>
             </form>
         </div>
         <hr/>
