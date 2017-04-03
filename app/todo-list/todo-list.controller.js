@@ -11,6 +11,7 @@
 		todoList.filterTodoList = filterTodoList;
 		todoList.clearCompleted = clearCompleted;
 		todoList.toggleCompleted = toggleCompleted;
+		todoList.removeTodo = todoService.removeTodo;
 
         function toggleCompleted(item) {
             item.completed = !item.completed

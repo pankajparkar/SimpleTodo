@@ -20,6 +20,7 @@
         self.addTodo = addTodo;
         self.removeTodos = removeTodos;
         self.getTabs = getTabs;
+        self.removeTodo = removeTodo;
         
         function getTodoList(){
             return todos;
@@ -42,6 +43,14 @@
                 return !todo.completed;
             });
         }
-	}
 
+        function removeTodo(item){
+            var id = item.id, index = -1;
+            todos.forEach(function(todo, i){
+                if(todo.id=== id) index =i;
+            });
+            if(index !== -1) todos.splice(index, 1);
+            alert('Todo '+ item.description + ' got deleted.');
+        }
+	}
 })(window, window.angular);

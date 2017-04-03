@@ -5,5 +5,10 @@
        uib-tooltip="{{todoItem.item.completed ? 'Unmark': 'Mark'}} as completed">
         <i class="glyphicon glyphicon-ok"></i>
     </button>
-    <input class="form-control todo-item-input" ng-model="todoItem.item.description"/>
+    <input class="form-control todo-item-input" ng-model="todoItem.item.description" ng-disabled="todoItem.item.completed"/>
+    <button class="btn btn-xs btn-danger" 
+       ng-click="todoItem.todoList.removeTodo(todoItem.item)"
+       uib-tooltip="Remove todo from list.">
+        <i class="glyphicon glyphicon-trash"></i>
+    </button>
 </div>
