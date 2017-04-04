@@ -23,6 +23,22 @@
 .form-control.todo-item-input {
     width: 30%; 
     display: inline;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-image: initial;
+	border-bottom: 3px solid rgb(45, 46, 48);
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+.form-control[disabled].todo-item-input {
+	background-color: white;
+}
+
+.form-control.todo-item-input:focus{
+	box-shadow: none;
+	border-bottom: 2px solid rgb(45, 46, 48);
 }
 
 .roundedOne input[type=checkbox] {

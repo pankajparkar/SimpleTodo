@@ -3,6 +3,7 @@
         <input type="checkbox" ng-model="todoItem.item.completed"
             ng-attr-id="{{'rounded-'+ todoItem.item.id }}" />
         <label ng-attr-for="{{'rounded-'+ todoItem.item.id}}" 
+            tooltip-placement="left"
             uib-tooltip="{{todoItem.item.completed ? 'Unmark': 'Mark'}} as completed">
         </label>
     </div>
