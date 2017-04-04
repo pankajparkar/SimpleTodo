@@ -1,3 +1,7 @@
+.todo-title {
+	font-size: 30px;
+}
+
 .form-control.new-todo {
     width: 75%; 
     float: left;
@@ -17,20 +21,12 @@
 }
 
 .form-control.todo-item-input {
-    width: 350px; 
+    width: 30%; 
     display: inline;
-    /*border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-bottom: 3px;
-    -webkit-box-shadow: inset 0 -1px 0px rgba(0,0,0,.075);
-    box-shadow: inset 0 -1px 0px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;*/
 }
 
-input[type=checkbox] {
+.roundedOne input[type=checkbox] {
+	margin: 6px 0 0;
     visibility: hidden;
 }
 

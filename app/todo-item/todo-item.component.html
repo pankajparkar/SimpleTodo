@@ -1,9 +1,10 @@
 <div class="form-group" >
     <div class="roundedOne">
-        <input type="checkbox" ng-model="todoItem.item.completed" ng-disabled="false"
-            uib-tooltip="{{todoItem.item.completed ? 'Unmark': 'Mark'}} as completed"
+        <input type="checkbox" ng-model="todoItem.item.completed"
             ng-attr-id="{{'rounded-'+ todoItem.item.id }}" />
-        <label ng-attr-for="{{'rounded-'+ todoItem.item.id}}"></label>
+        <label ng-attr-for="{{'rounded-'+ todoItem.item.id}}" 
+            uib-tooltip="{{todoItem.item.completed ? 'Unmark': 'Mark'}} as completed">
+        </label>
     </div>
     <input class="form-control todo-item-input" 
         ng-class="{'completed': todoItem.item.completed }" 
