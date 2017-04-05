@@ -8,10 +8,18 @@
 	function todoListController(todoService) {
         var todoList = this;
 		todoList.$onInit = $onInit;
+		todoList.$doCheck = $doCheck;
 		todoList.filterTodoList = filterTodoList;
 		todoList.clearCompleted = clearCompleted;
 		todoList.toggleCompleted = toggleCompleted;
 		todoList.removeTodo = todoService.removeTodo;
+
+		function $doCheck(model){
+			//Todo this should be somewhere else to make application more performant
+			todoList.todosCompleted = todoService.getTodoList().filter(function(item){
+				return item.completed;
+			}).length;
+		}
 
         function toggleCompleted(item) {
             item.completed = !item.completed

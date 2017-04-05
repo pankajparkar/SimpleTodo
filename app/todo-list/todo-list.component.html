@@ -26,4 +26,4 @@
     </div>
 </div>
 <hr/>
-<button class="btn btn-primary" ng-click="todoList.clearCompleted()">Clear Completed</button>
+<button class="btn btn-primary" ng-disabled="!todoList.todosCompleted" ng-click="todoList.clearCompleted()">Clear Completed</button>
