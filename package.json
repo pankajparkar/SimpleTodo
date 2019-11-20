@@ -7,7 +7,7 @@
   },
   "license": "TODO",
   "dependencies": {
-    "angular": "^1.6.3",
+    "angular": "^1.7.9",
     "angular-animate": "^1.6.3",
     "angular-sanitize": "^1.6.3",
     "angular-ui-bootstrap": "^2.5.0",
